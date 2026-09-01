@@ -15,9 +15,9 @@ TRACKS_ROOT="$(eval_tracks_dir "$FEATURE_TYPE" "$AOI_ID" "$LEAST_PAIR_RANKING_K"
 MATCHES_DIR="$(eval_feature_matches_dir "$FEATURE_TYPE" "$AOI_ID")"
 OUTPUT_DIR="$(eval_cleaned_tracks_dir "$FEATURE_TYPE" "$AOI_ID" "$LEAST_PAIR_RANKING_K" "$PAIR_SELECTION_MODE")"
 
-RAW_RPC_DIR="/home/roger/sat-bundleadjust_github/DATA/data_ready_full/OMA/$AOI_ID/rpcs"
+RAW_RPC_DIR="$EVAL_REPO_ROOT/DATA/data_ready_full/OMA/$AOI_ID/rpcs"
 AMES_RPC_DIR="/home/roger/ames_ba/outputs/$AOI_ID/adjusted_rpcs"
-SATBA_RPC_DIR="/home/roger/sat-bundleadjust_github/LOGS/exhaustive_eval_full/OMA_newnew/$AOI_ID/-lightglue_superpoint-bestpairs-K5/ba_bruteforce/rpcs_adj"
+SATBA_RPC_DIR="$EVAL_REPO_ROOT/LOGS/exhaustive_eval_full/OMA_newnew/$AOI_ID/-lightglue_superpoint-bestpairs-K5/ba_bruteforce/rpcs_adj"
 
 MAX_OBSERVATION_ERROR_PX="${MAX_OBSERVATION_ERROR_PX:-3.0}"
 CLEANING_MODE="${CLEANING_MODE:-fast_proxy}"

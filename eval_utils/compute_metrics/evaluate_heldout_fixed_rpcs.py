@@ -50,7 +50,7 @@ Required usage:
     python evaluate_heldout_fixed_rpcs.py \
         --matches_dir /path/to/superpoint_lightglue_matching/AOI \
         --rpc_dir /path/to/rpcs \
-        --sat_bundleadjust_repo /home/roger/sat-bundleadjust_github \
+        --sat_bundleadjust_repo /home/roger/sat-bundleadjust \
         --output_dir /path/to/output \
         --min_train_observations 3 \
         --use_best_pairs \

@@ -1,0 +1,42 @@
+# Core sat-bundleadjust requirements.
+#
+# Keep this block in sync with the sat-bundleadjust checkout used for the
+# experiments.
+setuptools
+ad @ git+https://github.com/centreborelli/ad.git
+ipyleaflet
+ipywidgets
+matplotlib
+numba
+numpy
+opencv-contrib-python
+rpcm @ git+https://github.com/centreborelli/rpcm.git@localization-origin
+scipy
+shapely
+networkx
+srtm4
+requests
+pyproj==3.6.1
+rasterio
+geojson
+utm
+ray
+joblib
+ransac
+
+# Additional evaluation and notebook requirements.
+torch==2.8.0
+torchvision==0.23.0
+Pillow==10.4.0
+tqdm==4.67.3
+transformers==4.57.6
+huggingface_hub==0.36.2
+pandas==2.3.3
+natsort
+git+https://github.com/cvg/LightGlue.git@746fac2c042e05d1865315b1413419f1c1e7ba55
+
+# Optional: needed only when recomputing CLIP image-similarity columns.
+clip @ git+https://github.com/openai/CLIP.git@d05afc436d78f1c48dc0dbf8e5980a9d471f35f6
+
+# Keep sat-bundleadjust last so the v2 package wins over older installed versions.
+bundle_adjust @ git+https://github.com/centreborelli/sat-bundleadjust_v2.git@e2ef952ca1100ca83242969134d18fb4a811b81d

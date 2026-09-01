@@ -14,7 +14,7 @@ MIN_TRACK_OBSERVATIONS="${MIN_TRACK_OBSERVATIONS:-4}"
 FT_MAX_LENGTH="${FT_MAX_LENGTH:-}"
 PAIR_OUTPUT_DIR="$(eval_pair_selection_dir "$AOI_ID" "$LEAST_PAIR_RANKING_K" "$PAIR_SELECTION_MODE")"
 
-RAW_RPC_DIR="/home/roger/sat-bundleadjust_github/DATA/data_ready_full/OMA/$AOI_ID/rpcs" # needed because only triangulable pairs are used to build feature tracks
+RAW_RPC_DIR="$EVAL_REPO_ROOT/DATA/data_ready_full/OMA/$AOI_ID/rpcs" # needed because only triangulable pairs are used to build feature tracks
 
 ARGS=(
   python "$SCRIPT_DIR/prepare_least_similar_tracks.py"

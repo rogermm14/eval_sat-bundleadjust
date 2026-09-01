@@ -9,16 +9,21 @@ if [[ -z "${EVAL_UTILS_DIR:-}" ]]; then
   EVAL_UTILS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 fi
 
-SATBA_REPO="/home/roger/sat-bundleadjust_github"
+if [[ -z "${EVAL_REPO_ROOT:-}" ]]; then
+  EVAL_REPO_ROOT="$(cd "$EVAL_UTILS_DIR/.." && pwd)"
+fi
 
-EVAL_ROOT="$SATBA_REPO/EVAL"
+SATBA_REPO="${SATBA_REPO:-/home/roger/sat-bundleadjust}"
+
+EVAL_ROOT="${EVAL_ROOT:-$EVAL_REPO_ROOT/EVAL}"
 EVAL_INPUTS_ROOT="$EVAL_ROOT/inputs"
 EVAL_OUTPUTS_ROOT="$EVAL_ROOT/outputs"
 EVAL_LOGS_ROOT="$EVAL_ROOT/logs"
 
-IMAGE_ROOT="$SATBA_REPO/DATA/Track3-RGB-OMA"
+IMAGE_ROOT="${IMAGE_ROOT:-$EVAL_REPO_ROOT/DATA/Track3-RGB-OMA}"
 
 export EVAL_UTILS_DIR
+export EVAL_REPO_ROOT
 export SATBA_REPO
 export EVAL_ROOT EVAL_INPUTS_ROOT EVAL_OUTPUTS_ROOT EVAL_LOGS_ROOT
 export IMAGE_ROOT

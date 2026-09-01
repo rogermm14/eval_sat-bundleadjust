@@ -58,7 +58,7 @@ Example:
         --eval_output_dir /path/to/ames_eval \
         --matches_dir /path/to/superpoint_lightglue_matches \
         --rpc_dir /path/to/ames_rpcs \
-        --sat_bundleadjust_repo /home/roger/sat-bundleadjust_github \
+        --sat_bundleadjust_repo /home/roger/sat-bundleadjust \
         --output_dir /path/to/ames_pairwise_3d \
         --min_track_length 3 \
         --max_pairs_per_track 100

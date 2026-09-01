@@ -124,10 +124,10 @@ HELDOUT_SCRIPT=$EVAL_UTILS_DIR/compute_metrics/evaluate_heldout_fixed_rpcs_from_
 ROBUSTNESS_SCRIPT=$EVAL_UTILS_DIR/compute_metrics/analyze_heldout_by_dino_similarity.py
 PAIRWISE_3D_SCRIPT=$EVAL_UTILS_DIR/compute_metrics/evaluate_pairwise_3d_height_consistency.py
 
-RAW_RPC_DIR="/home/roger/sat-bundleadjust_github/DATA/data_ready_full/OMA/$AOI_ID/rpcs"
+RAW_RPC_DIR="$EVAL_REPO_ROOT/DATA/data_ready_full/OMA/$AOI_ID/rpcs"
 AMES_RPC_DIR="/home/roger/ames_ba/outputs_Cauchy_SIFT/$AOI_ID/adjusted_rpcs"
-SATBA_RPC_DIR="/home/roger/sat-bundleadjust_github/LOGS/exhaustive_eval_full/OMA_newnew/$AOI_ID/opencv-flann-baseline/ba_bruteforce/rpcs_adj"
-MY_RPC_DIR="/home/roger/sat-bundleadjust_github/LOGS/exhaustive_eval_full/OMA_newnew/$AOI_ID/-lightglue_superpoint-bestpairs-K5/ba_bruteforce/rpcs_adj"
+SATBA_RPC_DIR="$EVAL_REPO_ROOT/LOGS/exhaustive_eval_full/OMA_newnew/$AOI_ID/opencv-flann-baseline/ba_bruteforce/rpcs_adj"
+MY_RPC_DIR="$EVAL_REPO_ROOT/LOGS/exhaustive_eval_full/OMA_newnew/$AOI_ID/-lightglue_superpoint-bestpairs-K5/ba_bruteforce/rpcs_adj"
 
 RAW_EVAL_DIR=$BASE_OUT_DIR/raw_rpcs
 AMES_EVAL_DIR=$BASE_OUT_DIR/ames_rpcs

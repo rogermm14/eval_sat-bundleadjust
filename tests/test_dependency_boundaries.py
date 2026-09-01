@@ -1,9 +1,13 @@
 import ast
+import os
 from pathlib import Path
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-CORE_PACKAGE = REPO_ROOT / "bundle_adjust"
+SAT_BUNDLEADJUST_REPO = Path(
+    os.environ.get("SAT_BUNDLEADJUST_REPO", "/home/roger/sat-bundleadjust")
+).expanduser()
+CORE_PACKAGE = SAT_BUNDLEADJUST_REPO / "bundle_adjust"
 FORBIDDEN_ROOTS = {"eval_utils", "notebooks"}
 
 
@@ -38,6 +42,11 @@ def _string_literals(tree):
 
 
 def test_bundle_adjust_does_not_depend_on_eval_or_notebooks():
+    assert CORE_PACKAGE.is_dir(), (
+        "Could not find sat-bundleadjust's bundle_adjust package. "
+        "Set SAT_BUNDLEADJUST_REPO=/path/to/sat-bundleadjust."
+    )
+
     offenders = []
 
     for path in _iter_python_files(CORE_PACKAGE):
@@ -45,12 +54,16 @@ def test_bundle_adjust_does_not_depend_on_eval_or_notebooks():
 
         for root in _import_roots(tree):
             if root in FORBIDDEN_ROOTS:
-                offenders.append(f"{path.relative_to(REPO_ROOT)} imports {root}")
+                offenders.append(
+                    f"{path.relative_to(SAT_BUNDLEADJUST_REPO)} imports {root}"
+                )
 
         for value in _string_literals(tree):
             normalized = value.replace("\\", "/")
             for root in FORBIDDEN_ROOTS:
                 if root in normalized.split("/"):
-                    offenders.append(f"{path.relative_to(REPO_ROOT)} references {root}")
+                    offenders.append(
+                        f"{path.relative_to(SAT_BUNDLEADJUST_REPO)} references {root}"
+                    )
 
     assert not offenders, "\n".join(offenders)
