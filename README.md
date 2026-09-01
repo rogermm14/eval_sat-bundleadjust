@@ -6,9 +6,9 @@ the Omaha and Jacksonville areas of interest.
 
 This repository is intended to evaluate:
 
-- AMES Stereo Pipeline bundle adjustment
-- SAT-BA v1
-- SAT-BA v2
+- [AMES Stereo Pipeline](https://github.com/NeoGeographyToolkit/StereoPipeline)
+- [SAT-BA v1](https://centreborelli.github.io/sat-bundleadjust/v1/)
+- [SAT-BA v2](https://centreborelli.github.io/sat-bundleadjust/v2/)
 
 The evaluation protocol is described in the paper
 [Robust RPC Bundle Adjustment for Multi-Date Satellite Imagery with Season-Invariant Correspondences](https://arxiv.org/abs/2607.26973).
